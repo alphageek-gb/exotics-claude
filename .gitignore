@@ -1,0 +1,4 @@
+.env
+shop_cache.db
+__pycache__/
+*.pyc
