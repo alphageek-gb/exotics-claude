@@ -14,7 +14,7 @@ Requirements:
 
 .env file (same directory as this script):
     SHOPIFY_STORE=yourstore.myshopify.com
-    SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxxxx
+    SHOPIFY_API_KEY=shpat_xxxxxxxxxxxx
 """
 
 import argparse
@@ -34,7 +34,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 STORE    = os.getenv("SHOPIFY_STORE", "").strip().rstrip("/")
-TOKEN    = os.getenv("SHOPIFY_ACCESS_TOKEN", "").strip()
+TOKEN    = os.getenv("SHOPIFY_API_KEY", "").strip()
 API_VER  = "2024-04"
 BASE_URL = f"https://{STORE}/admin/api/{API_VER}"
 
@@ -216,10 +216,10 @@ def main() -> None:
 
     if not STORE or not TOKEN:
         sys.exit(
-            "ERROR: SHOPIFY_STORE and SHOPIFY_ACCESS_TOKEN must be set in your .env file.\n"
+            "ERROR: SHOPIFY_STORE and SHOPIFY_API_KEY must be set in your .env file.\n"
             "Example:\n"
             "  SHOPIFY_STORE=yourstore.myshopify.com\n"
-            "  SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxxxx"
+            "  SHOPIFY_API_KEY=shpat_xxxxxxxxxxxx"
         )
 
     try:
