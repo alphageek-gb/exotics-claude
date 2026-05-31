@@ -118,8 +118,8 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument("--file", required=True, nargs="+",
                    help="JSON file(s) to import — supports globs e.g. 2026-*.json")
-    p.add_argument("--db",   required=True,
-                   help="Path to SQLite database file (created if it doesn't exist)")
+    p.add_argument("--db",   default=str(Path(__file__).parent / "shop_cache.db"),
+                   help="Path to SQLite database file (default: shop_cache.db)")
     return p.parse_args()
 
 
