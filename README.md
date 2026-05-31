@@ -256,7 +256,13 @@ python3 import_to_db.py --file /data/archive/2026-01.json --db products.db
 
 ```bash
 python3 shopify_variant_stats.py --month 2026-05
-python3 import_to_db.py --file 2026-05.json --db products.db
+python3 import_to_db.py --file 2026-05.json
+```
+
+**Import all files in `sales_data/` at once:**
+
+```bash
+python3 import_to_db.py --file "2026-*.json"
 ```
 
 **Database schema:**
