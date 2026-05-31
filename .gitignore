@@ -1,4 +1,5 @@
 .env
 shop_cache.db
+output_files/
 __pycache__/
 *.pyc
